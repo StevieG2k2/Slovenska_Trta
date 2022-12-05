@@ -528,3 +528,11 @@ C:\Users\User\Desktop\Faks 2. letnik\IS\Slovenska_Trta\web\obj\Debug\net6.0\refi
 C:\Users\User\Desktop\Faks 2. letnik\IS\Slovenska_Trta\web\obj\Debug\net6.0\web.pdb
 C:\Users\User\Desktop\Faks 2. letnik\IS\Slovenska_Trta\web\obj\Debug\net6.0\web.genruntimeconfig.cache
 C:\Users\User\Desktop\Faks 2. letnik\IS\Slovenska_Trta\web\obj\Debug\net6.0\ref\web.dll
+C:\Users\User\Desktop\Faks 2. letnik\IS\Slovenska_Trta\web\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\User\Desktop\Faks 2. letnik\IS\Slovenska_Trta\web\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\User\Desktop\Faks 2. letnik\IS\Slovenska_Trta\web\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\User\Desktop\Faks 2. letnik\IS\Slovenska_Trta\web\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\User\Desktop\Faks 2. letnik\IS\Slovenska_Trta\web\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\User\Desktop\Faks 2. letnik\IS\Slovenska_Trta\web\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\User\Desktop\Faks 2. letnik\IS\Slovenska_Trta\web\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\User\Desktop\Faks 2. letnik\IS\Slovenska_Trta\web\obj\Debug\net6.0\web.MvcApplicationPartsAssemblyInfo.cs

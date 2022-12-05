@@ -1,12 +1,19 @@
 using web.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using web.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("TrtaContext");
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<TrtaContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("TrtaContext")));
+
+builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
+    .AddRoles<IdentityRole>()
+    .AddEntityFrameworkStores<TrtaContext>();
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -38,6 +45,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseAuthentication();;
+app.MapRazorPages();
 
 app.UseAuthorization();
 
