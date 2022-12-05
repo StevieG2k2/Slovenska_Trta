@@ -8,117 +8,117 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = web
 build_property.RootNamespace = web
-build_property.ProjectDir = C:\Users\Jernej\Documents\GitHub\SlovenskaTrta\web\
+build_property.ProjectDir = C:\Users\User\Desktop\Faks 2. letnik\IS\Slovenska_Trta\web\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Jernej\Documents\GitHub\SlovenskaTrta\web
+build_property.MSBuildProjectDirectory = C:\Users\User\Desktop\Faks 2. letnik\IS\Slovenska_Trta\web
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Jernej/Documents/GitHub/SlovenskaTrta/web/Views/Home/Index.cshtml]
+[C:/Users/User/Desktop/Faks 2. letnik/IS/Slovenska_Trta/web/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jernej/Documents/GitHub/SlovenskaTrta/web/Views/Home/Privacy.cshtml]
+[C:/Users/User/Desktop/Faks 2. letnik/IS/Slovenska_Trta/web/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jernej/Documents/GitHub/SlovenskaTrta/web/Views/Odkup/Create.cshtml]
+[C:/Users/User/Desktop/Faks 2. letnik/IS/Slovenska_Trta/web/Views/Odkup/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2RrdXBcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jernej/Documents/GitHub/SlovenskaTrta/web/Views/Odkup/Delete.cshtml]
+[C:/Users/User/Desktop/Faks 2. letnik/IS/Slovenska_Trta/web/Views/Odkup/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2RrdXBcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jernej/Documents/GitHub/SlovenskaTrta/web/Views/Odkup/Details.cshtml]
+[C:/Users/User/Desktop/Faks 2. letnik/IS/Slovenska_Trta/web/Views/Odkup/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2RrdXBcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jernej/Documents/GitHub/SlovenskaTrta/web/Views/Odkup/Edit.cshtml]
+[C:/Users/User/Desktop/Faks 2. letnik/IS/Slovenska_Trta/web/Views/Odkup/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2RrdXBcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jernej/Documents/GitHub/SlovenskaTrta/web/Views/Odkup/Index.cshtml]
+[C:/Users/User/Desktop/Faks 2. letnik/IS/Slovenska_Trta/web/Views/Odkup/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2RrdXBcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jernej/Documents/GitHub/SlovenskaTrta/web/Views/Pridelek/Create.cshtml]
+[C:/Users/User/Desktop/Faks 2. letnik/IS/Slovenska_Trta/web/Views/Pridelek/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJpZGVsZWtcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jernej/Documents/GitHub/SlovenskaTrta/web/Views/Pridelek/Delete.cshtml]
+[C:/Users/User/Desktop/Faks 2. letnik/IS/Slovenska_Trta/web/Views/Pridelek/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJpZGVsZWtcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jernej/Documents/GitHub/SlovenskaTrta/web/Views/Pridelek/Details.cshtml]
+[C:/Users/User/Desktop/Faks 2. letnik/IS/Slovenska_Trta/web/Views/Pridelek/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJpZGVsZWtcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jernej/Documents/GitHub/SlovenskaTrta/web/Views/Pridelek/Edit.cshtml]
+[C:/Users/User/Desktop/Faks 2. letnik/IS/Slovenska_Trta/web/Views/Pridelek/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJpZGVsZWtcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jernej/Documents/GitHub/SlovenskaTrta/web/Views/Pridelek/Index.cshtml]
+[C:/Users/User/Desktop/Faks 2. letnik/IS/Slovenska_Trta/web/Views/Pridelek/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJpZGVsZWtcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jernej/Documents/GitHub/SlovenskaTrta/web/Views/Shared/Error.cshtml]
+[C:/Users/User/Desktop/Faks 2. letnik/IS/Slovenska_Trta/web/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jernej/Documents/GitHub/SlovenskaTrta/web/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/User/Desktop/Faks 2. letnik/IS/Slovenska_Trta/web/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jernej/Documents/GitHub/SlovenskaTrta/web/Views/Trte/Create.cshtml]
+[C:/Users/User/Desktop/Faks 2. letnik/IS/Slovenska_Trta/web/Views/Trte/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJ0ZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jernej/Documents/GitHub/SlovenskaTrta/web/Views/Trte/Delete.cshtml]
+[C:/Users/User/Desktop/Faks 2. letnik/IS/Slovenska_Trta/web/Views/Trte/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJ0ZVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jernej/Documents/GitHub/SlovenskaTrta/web/Views/Trte/Details.cshtml]
+[C:/Users/User/Desktop/Faks 2. letnik/IS/Slovenska_Trta/web/Views/Trte/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJ0ZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jernej/Documents/GitHub/SlovenskaTrta/web/Views/Trte/Edit.cshtml]
+[C:/Users/User/Desktop/Faks 2. letnik/IS/Slovenska_Trta/web/Views/Trte/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJ0ZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jernej/Documents/GitHub/SlovenskaTrta/web/Views/Trte/Index.cshtml]
+[C:/Users/User/Desktop/Faks 2. letnik/IS/Slovenska_Trta/web/Views/Trte/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJ0ZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jernej/Documents/GitHub/SlovenskaTrta/web/Views/Vinogradi/Create.cshtml]
+[C:/Users/User/Desktop/Faks 2. letnik/IS/Slovenska_Trta/web/Views/Vinogradi/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlub2dyYWRpXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jernej/Documents/GitHub/SlovenskaTrta/web/Views/Vinogradi/Delete.cshtml]
+[C:/Users/User/Desktop/Faks 2. letnik/IS/Slovenska_Trta/web/Views/Vinogradi/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlub2dyYWRpXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jernej/Documents/GitHub/SlovenskaTrta/web/Views/Vinogradi/Details.cshtml]
+[C:/Users/User/Desktop/Faks 2. letnik/IS/Slovenska_Trta/web/Views/Vinogradi/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlub2dyYWRpXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jernej/Documents/GitHub/SlovenskaTrta/web/Views/Vinogradi/Edit.cshtml]
+[C:/Users/User/Desktop/Faks 2. letnik/IS/Slovenska_Trta/web/Views/Vinogradi/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlub2dyYWRpXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jernej/Documents/GitHub/SlovenskaTrta/web/Views/Vinogradi/Index.cshtml]
+[C:/Users/User/Desktop/Faks 2. letnik/IS/Slovenska_Trta/web/Views/Vinogradi/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlub2dyYWRpXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jernej/Documents/GitHub/SlovenskaTrta/web/Views/_ViewImports.cshtml]
+[C:/Users/User/Desktop/Faks 2. letnik/IS/Slovenska_Trta/web/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jernej/Documents/GitHub/SlovenskaTrta/web/Views/_ViewStart.cshtml]
+[C:/Users/User/Desktop/Faks 2. letnik/IS/Slovenska_Trta/web/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jernej/Documents/GitHub/SlovenskaTrta/web/Views/Shared/_Layout.cshtml]
+[C:/Users/User/Desktop/Faks 2. letnik/IS/Slovenska_Trta/web/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-vpkz4e1jaw
