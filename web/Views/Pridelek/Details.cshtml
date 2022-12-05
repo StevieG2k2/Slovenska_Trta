@@ -1,0 +1,54 @@
+@model web.Models.Pridelek
+
+@{
+    ViewData["Title"] = "Podrobnosti";
+}
+
+<h1>Podrobnosti</h1>
+
+<div>
+    <h4>Pridelek</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VinogradId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VinogradId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Kolicina)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Kolicina)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KolNaHa)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KolNaHa)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KgNaTrto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KgNaTrto)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.letoMeritve)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.letoMeritve)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Trte)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Trte.TrteId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.PridelekId">Edit</a> |
+    <a asp-action="Index">Nazaj na seznam</a>
+</div>

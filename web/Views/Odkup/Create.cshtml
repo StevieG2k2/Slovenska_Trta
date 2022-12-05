@@ -1,0 +1,45 @@
+@model web.Models.Odkup
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Ustvari</h1>
+
+<h4>Odkup</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PridelekId" class="control-label">Pridelek ID</label>
+                <input asp-for="PridelekId" class="form-control" />
+                <span asp-validation-for="PridelekId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kolicina" class="control-label">Količina</label>
+                <input asp-for="Kolicina" class="form-control" />
+                <span asp-validation-for="Kolicina" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CenaNaKg" class="control-label">Cena na Kilogram (EUR)</label>
+                <input asp-for="CenaNaKg" class="form-control" />
+                <span asp-validation-for="CenaNaKg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="letoMeritve" class="control-label">Leto Meritve</label>
+                <input asp-for="letoMeritve" class="form-control" />
+                <span asp-validation-for="letoMeritve" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Ustvari" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Nazaj na seznam</a>
+</div>
+

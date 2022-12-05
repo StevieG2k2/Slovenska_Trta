@@ -1,0 +1,53 @@
+@model IEnumerable<web.Models.Odkup>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Odkup</h1>
+
+<p>
+    <a asp-action="Create">Ustvari nov</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PridelekId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kolicina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CenaNaKg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.letoMeritve)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PridelekId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kolicina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CenaNaKg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.letoMeritve)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.OdkupId">Uredi</a> |
+                <a asp-action="Details" asp-route-id="@item.OdkupId">Podrobnosti</a> |
+                <a asp-action="Delete" asp-route-id="@item.OdkupId">Izbriši</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

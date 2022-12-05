@@ -1,0 +1,53 @@
+@model IEnumerable<web.Models.Vinogradi>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Vinogradi</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Povrsina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StTrt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.letoMeritve)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trte)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Povrsina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StTrt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.letoMeritve)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Trte.TrteId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.VinogradiId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.VinogradiId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.VinogradiId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

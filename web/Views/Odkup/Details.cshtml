@@ -1,0 +1,42 @@
+@model web.Models.Odkup
+
+@{
+    ViewData["Title"] = "Podrobnosti";
+}
+
+<h1>Podrobnosti</h1>
+
+<div>
+    <h4>Odkup</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PridelekId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PridelekId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Kolicina)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Kolicina)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CenaNaKg)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CenaNaKg)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.letoMeritve)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.letoMeritve)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.OdkupId">Edit</a> |
+    <a asp-action="Index">Nazaj na seznam</a>
+</div>
