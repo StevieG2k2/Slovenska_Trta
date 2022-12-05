@@ -1,9 +1,10 @@
 using web.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace web.Data
 {
-    public class TrtaContext : DbContext
+    public class TrtaContext : IdentityDbContext<ApplicationUser>
     {
         public TrtaContext(DbContextOptions<TrtaContext> options) : base(options)
         {
@@ -18,6 +19,7 @@ namespace web.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //modelBuilder.Entity<Users>().ToTable("User");
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Trte>().ToTable("Trte");
             modelBuilder.Entity<Pridelek>().ToTable("Pridelek");
             modelBuilder.Entity<Vinogradi>().ToTable("Vinogradi");
