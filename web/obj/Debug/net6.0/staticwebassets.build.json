@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "x6OImciCZJCbp8+IPImeAsBbdCPPyS3qcssuIFAsQmc=",
+  "Hash": "FsZfrgtF8kq+2EPP4GY4w/UZ/DxgSaLRxSz3MxNpjwQ=",
   "Source": "web",
   "BasePath": "_content/web",
   "Mode": "Default",
@@ -1088,6 +1088,23 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
+      "Identity": "C:\\Users\\User\\Desktop\\Faks 2. letnik\\IS\\Slovenska_Trta\\web\\wwwroot\\css\\stil.css",
+      "SourceId": "web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\Faks 2. letnik\\IS\\Slovenska_Trta\\web\\wwwroot\\",
+      "BasePath": "_content/web",
+      "RelativePath": "css/stil.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\stil.css"
+    },
+    {
       "Identity": "C:\\Users\\User\\Desktop\\Faks 2. letnik\\IS\\Slovenska_Trta\\web\\wwwroot\\favicon.ico",
       "SourceId": "web",
       "SourceType": "Discovered",
@@ -2089,6 +2106,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Desktop\\Faks 2. letnik\\IS\\Slovenska_Trta\\web\\wwwroot\\Slike\\SlovenskaTrtaLogo.png",
+      "SourceId": "web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\Faks 2. letnik\\IS\\Slovenska_Trta\\web\\wwwroot\\",
+      "BasePath": "_content/web",
+      "RelativePath": "Slike/SlovenskaTrtaLogo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Slike\\SlovenskaTrtaLogo.png"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Desktop\\Faks 2. letnik\\IS\\Slovenska_Trta\\web\\wwwroot\\Slike\\TrteVSloveniji.jpg",
+      "SourceId": "web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\Faks 2. letnik\\IS\\Slovenska_Trta\\web\\wwwroot\\",
+      "BasePath": "_content/web",
+      "RelativePath": "Slike/TrteVSloveniji.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Slike\\TrteVSloveniji.jpg"
     }
   ]
 }

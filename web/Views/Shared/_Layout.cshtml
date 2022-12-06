@@ -7,40 +7,43 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/web.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/stil.css" asp-append-version="true" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Slovenska trta</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+        <nav class="navbar navbar-expand-sm box-shadow mb-3 barjansa">
+            <div class="container-fluid barjansa1">
+                <a class="navbar-brand barjansa1" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/Slike/SlovenskaTrtaLogo.png" class= "slika" title="title" alt="additional title"/>
+                </a>
+                <button class="navbar-toggler barjansa" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial" />
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse barjansa1">
+                    <partial name="_LoginPartial"/>
+                    <ul class="navbar-nav flex-grow-1 velikost">
+                        <li class="nav-item gumb">
+                            <a class="nav-link nav-item gumbTekst" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        <li class="nav-item gumb">
+                            <a class="nav-link gumbTekst" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Trte" asp-action="Index">Trte</a>
+                        <li class="nav-item gumb">
+                            <a class="nav-link gumbTekst" asp-area="" asp-controller="Trte" asp-action="Index">Trte</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Vinogradi" asp-action="Index">Vinogradi</a>
+                        <li class="nav-item gumb">
+                            <a class="nav-link gumbTekst" asp-area="" asp-controller="Vinogradi" asp-action="Index">Vinogradi</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Pridelek" asp-action="Index">Pridelek</a>
+                        <li class="nav-item gumb">
+                            <a class="nav-link gumbTekst" asp-area="" asp-controller="Pridelek" asp-action="Index">Pridelek</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Odkup" asp-action="Index">Odkup</a>
+                        <li class="nav-item gumb">
+                            <a class="nav-link gumbTekst" asp-area="" asp-controller="Odkup" asp-action="Index">Odkup</a>
                         </li>
                          <!-- TO JE SAMO ZA TESTIRAT BAZO, KO USE DELA TA NAVITEM ZBRIŠI -->
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">TEST 4 USERS</a>
+                        <li class="nav-item gumb">
+                            <a class="nav-link text-light gumbTekst" asp-area="" asp-controller="Users" asp-action="Index">TEST 4 USERS</a>
                         </li>
                     </ul>
                 </div>
@@ -52,6 +55,7 @@
             @RenderBody()
         </main>
     </div>
+    <img src = "~/Slike/TrteVSloveniji.jpg" class = "ozadje"/>
 
     <footer class="border-top footer text-muted">
         <div class="container">

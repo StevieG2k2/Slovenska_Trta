@@ -6,15 +6,17 @@ a.navbar-brand[b-vpkz4e1jaw] {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+  padding:0px;
+  margin:0px;
 }
 
 a[b-vpkz4e1jaw] {
-  color: #0077cc;
+  color: #ffffff;
 }
 
 .btn-primary[b-vpkz4e1jaw] {
   color: #fff;
-  background-color: #1b6ec2;
+  background-color: #ffffff;
   border-color: #1861ac;
 }
 
