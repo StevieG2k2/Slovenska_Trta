@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using web.Data;
 using web.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace web.Controllers
 {
@@ -15,10 +16,12 @@ namespace web.Controllers
     public class VinogradiController : Controller
     {
         private readonly TrtaContext _context;
+        private readonly UserManager<ApplicationUser> _usermanager;
 
-        public VinogradiController(TrtaContext context)
+        public VinogradiController(TrtaContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _usermanager = userManager;
         }
 
         // GET: Vinogradi
@@ -48,6 +51,7 @@ namespace web.Controllers
         }
 
         // GET: Vinogradi/Create
+        [Authorize(Roles = "Administrator")]
         public IActionResult Create()
         {
             ViewData["TrteId"] = new SelectList(_context.Trte, "TrteId", "TrteId");
@@ -61,8 +65,12 @@ namespace web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("VinogradiId,TrteId,Povrsina,StTrt,letoMeritve")] Vinogradi vinogradi)
         {
+            var currentUser = await _usermanager.GetUserAsync(User);
             if (ModelState.IsValid)
             {
+                vinogradi.DateCreated = DateTime.Now;
+                vinogradi.DateEdited = DateTime.Now;
+                vinogradi.Owner= currentUser;
                 _context.Add(vinogradi);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -72,6 +80,7 @@ namespace web.Controllers
         }
 
         // GET: Vinogradi/Edit/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Vinogradi == null)
@@ -125,6 +134,7 @@ namespace web.Controllers
         }
 
         // GET: Vinogradi/Delete/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Vinogradi == null)

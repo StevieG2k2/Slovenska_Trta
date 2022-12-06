@@ -244,8 +244,17 @@ namespace web.Migrations
                     b.Property<decimal>("CenaNaKg")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<DateTime?>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateEdited")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("Kolicina")
                         .HasColumnType("int");
+
+                    b.Property<string>("OwnerId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("PridelekId")
                         .HasColumnType("int");
@@ -254,6 +263,8 @@ namespace web.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("OdkupId");
+
+                    b.HasIndex("OwnerId");
 
                     b.ToTable("Odkup", (string)null);
                 });
@@ -266,6 +277,12 @@ namespace web.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PridelekId"), 1L, 1);
 
+                    b.Property<DateTime?>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateEdited")
+                        .HasColumnType("datetime2");
+
                     b.Property<decimal>("KgNaTrto")
                         .HasColumnType("decimal(18,2)");
 
@@ -274,6 +291,9 @@ namespace web.Migrations
 
                     b.Property<int>("Kolicina")
                         .HasColumnType("int");
+
+                    b.Property<string>("OwnerId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("TrteId")
                         .HasColumnType("int");
@@ -288,6 +308,8 @@ namespace web.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("PridelekId");
+
+                    b.HasIndex("OwnerId");
 
                     b.HasIndex("TrteId");
 
@@ -331,6 +353,15 @@ namespace web.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("VinogradiId"), 1L, 1);
 
+                    b.Property<DateTime?>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateEdited")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("OwnerId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<int>("Povrsina")
                         .HasColumnType("int");
 
@@ -344,6 +375,8 @@ namespace web.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("VinogradiId");
+
+                    b.HasIndex("OwnerId");
 
                     b.HasIndex("TrteId");
 
@@ -401,8 +434,21 @@ namespace web.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("web.Models.Odkup", b =>
+                {
+                    b.HasOne("web.Models.ApplicationUser", "Owner")
+                        .WithMany()
+                        .HasForeignKey("OwnerId");
+
+                    b.Navigation("Owner");
+                });
+
             modelBuilder.Entity("web.Models.Pridelek", b =>
                 {
+                    b.HasOne("web.Models.ApplicationUser", "Owner")
+                        .WithMany()
+                        .HasForeignKey("OwnerId");
+
                     b.HasOne("web.Models.Trte", "Trte")
                         .WithMany("Pridelek")
                         .HasForeignKey("TrteId")
@@ -412,6 +458,8 @@ namespace web.Migrations
                     b.HasOne("web.Models.Vinogradi", "Vinogradi")
                         .WithMany("Pridelek")
                         .HasForeignKey("VinogradiId");
+
+                    b.Navigation("Owner");
 
                     b.Navigation("Trte");
 
@@ -429,11 +477,17 @@ namespace web.Migrations
 
             modelBuilder.Entity("web.Models.Vinogradi", b =>
                 {
+                    b.HasOne("web.Models.ApplicationUser", "Owner")
+                        .WithMany()
+                        .HasForeignKey("OwnerId");
+
                     b.HasOne("web.Models.Trte", "Trte")
                         .WithMany("Vinogradi")
                         .HasForeignKey("TrteId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Owner");
 
                     b.Navigation("Trte");
                 });

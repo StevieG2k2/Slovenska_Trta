@@ -52,22 +52,6 @@ namespace web.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Odkup",
-                columns: table => new
-                {
-                    OdkupId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    PridelekId = table.Column<int>(type: "int", nullable: false),
-                    Kolicina = table.Column<int>(type: "int", nullable: false),
-                    CenaNaKg = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    letoMeritve = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Odkup", x => x.OdkupId);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -174,6 +158,30 @@ namespace web.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Odkup",
+                columns: table => new
+                {
+                    OdkupId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PridelekId = table.Column<int>(type: "int", nullable: false),
+                    Kolicina = table.Column<int>(type: "int", nullable: false),
+                    CenaNaKg = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    letoMeritve = table.Column<int>(type: "int", nullable: false),
+                    DateCreated = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DateEdited = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    OwnerId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Odkup", x => x.OdkupId);
+                    table.ForeignKey(
+                        name: "FK_Odkup_AspNetUsers_OwnerId",
+                        column: x => x.OwnerId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Trte",
                 columns: table => new
                 {
@@ -203,11 +211,19 @@ namespace web.Migrations
                     TrteId = table.Column<int>(type: "int", nullable: false),
                     Povrsina = table.Column<int>(type: "int", nullable: false),
                     StTrt = table.Column<int>(type: "int", nullable: false),
-                    letoMeritve = table.Column<int>(type: "int", nullable: false)
+                    letoMeritve = table.Column<int>(type: "int", nullable: false),
+                    DateCreated = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DateEdited = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    OwnerId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Vinogradi", x => x.VinogradiId);
+                    table.ForeignKey(
+                        name: "FK_Vinogradi_AspNetUsers_OwnerId",
+                        column: x => x.OwnerId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Vinogradi_Trte_TrteId",
                         column: x => x.TrteId,
@@ -228,11 +244,19 @@ namespace web.Migrations
                     KolNaHa = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     KgNaTrto = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     letoMeritve = table.Column<int>(type: "int", nullable: false),
+                    DateCreated = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DateEdited = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    OwnerId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     VinogradiId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Pridelek", x => x.PridelekId);
+                    table.ForeignKey(
+                        name: "FK_Pridelek_AspNetUsers_OwnerId",
+                        column: x => x.OwnerId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Pridelek_Trte_TrteId",
                         column: x => x.TrteId,
@@ -286,6 +310,16 @@ namespace web.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Odkup_OwnerId",
+                table: "Odkup",
+                column: "OwnerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Pridelek_OwnerId",
+                table: "Pridelek",
+                column: "OwnerId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Pridelek_TrteId",
                 table: "Pridelek",
                 column: "TrteId");
@@ -298,6 +332,11 @@ namespace web.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Trte_OwnerId",
                 table: "Trte",
+                column: "OwnerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Vinogradi_OwnerId",
+                table: "Vinogradi",
                 column: "OwnerId");
 
             migrationBuilder.CreateIndex(

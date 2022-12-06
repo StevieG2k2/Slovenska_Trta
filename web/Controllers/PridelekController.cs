@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using web.Data;
 using web.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace web.Controllers
 {
@@ -15,10 +16,12 @@ namespace web.Controllers
     public class PridelekController : Controller
     {
         private readonly TrtaContext _context;
+        private readonly UserManager<ApplicationUser> _usermanager;
 
-        public PridelekController(TrtaContext context)
+        public PridelekController(TrtaContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _usermanager = userManager;
         }
 
         // GET: Pridelek
@@ -48,6 +51,7 @@ namespace web.Controllers
         }
 
         // GET: Pridelek/Create
+        [Authorize(Roles = "Administrator")]
         public IActionResult Create()
         {
             ViewData["TrteId"] = new SelectList(_context.Trte, "TrteId", "TrteId");
@@ -61,8 +65,12 @@ namespace web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("PridelekId,TrteId,VinogradId,Kolicina,KolNaHa,KgNaTrto,letoMeritve")] Pridelek pridelek)
         {
+            var currentUser = await _usermanager.GetUserAsync(User);
             if (ModelState.IsValid)
             {
+                pridelek.DateCreated = DateTime.Now;
+                pridelek.DateEdited = DateTime.Now;
+                pridelek.Owner= currentUser;
                 _context.Add(pridelek);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -72,6 +80,7 @@ namespace web.Controllers
         }
 
         // GET: Pridelek/Edit/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Pridelek == null)
@@ -125,6 +134,7 @@ namespace web.Controllers
         }
 
         // GET: Pridelek/Delete/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Pridelek == null)

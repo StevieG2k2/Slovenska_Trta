@@ -14,6 +14,9 @@ namespace web.Models
         public decimal KgNaTrto { get; set; }
         public int letoMeritve { get; set; }
 
+        public DateTime? DateCreated { get; set; }
+        public DateTime? DateEdited { get; set; }
+        public ApplicationUser? Owner { get; set; }
         public Trte Trte { get; set; }
         public Vinogradi Vinogradi { get; set; }
     }

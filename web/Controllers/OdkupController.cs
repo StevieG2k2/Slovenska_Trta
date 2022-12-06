@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using web.Data;
 using web.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace web.Controllers
 {
@@ -16,10 +17,12 @@ namespace web.Controllers
     {
         
         private readonly TrtaContext _context;
+        private readonly UserManager<ApplicationUser> _usermanager;
 
-        public OdkupController(TrtaContext context)
+        public OdkupController(TrtaContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _usermanager = userManager;
         }
 
         // GET: Odkup
@@ -47,6 +50,7 @@ namespace web.Controllers
         }
 
         // GET: Odkup/Create
+        [Authorize(Roles = "Administrator")]
         public IActionResult Create()
         {
             return View();
@@ -59,8 +63,12 @@ namespace web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("OdkupId,PridelekId,Kolicina,CenaNaKg,letoMeritve")] Odkup odkup)
         {
+            var currentUser = await _usermanager.GetUserAsync(User);
             if (ModelState.IsValid)
             {
+                odkup.DateCreated = DateTime.Now;
+                odkup.DateEdited = DateTime.Now;
+                odkup.Owner= currentUser;
                 _context.Add(odkup);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -69,6 +77,7 @@ namespace web.Controllers
         }
 
         // GET: Odkup/Edit/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Odkup == null)
@@ -120,6 +129,7 @@ namespace web.Controllers
         }
 
         // GET: Odkup/Delete/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Odkup == null)

@@ -49,6 +49,7 @@ namespace web.Controllers
         }
 
         // GET: Trte/Create
+        [Authorize(Roles = "Administrator")]
         public IActionResult Create()
         {
             return View();
@@ -75,6 +76,7 @@ namespace web.Controllers
         }
 
         // GET: Trte/Edit/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Trte == null)
@@ -126,6 +128,7 @@ namespace web.Controllers
         }
 
         // GET: Trte/Delete/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Trte == null)
