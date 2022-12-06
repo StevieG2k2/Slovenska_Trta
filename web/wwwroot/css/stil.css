@@ -1,0 +1,49 @@
+.slika{
+    width:90px;
+    height:80px;
+    padding:0px;
+    margin:0px;
+}
+/*
+.container-fluid{
+    background-color: #3464AF;
+}
+*/
+.navbar{
+    background-color: #3464AF;
+}
+.barjansa{
+    background-color: #3464AF;
+    color:white !important;
+}
+.barjansa1{
+    color:white !important;
+}
+.home{
+    color: white;
+}
+.velikost{
+    font-size:21px;
+}
+.velikost2{
+    font-size:17px;
+}
+.gumb:hover{
+    background-color: white;
+}
+.gumb{
+    background-color: #3464AF;
+}
+.gumbTekst{
+    color:white !important;
+}
+.gumbTekst:hover{
+    color:#3464AF !important;
+}
+.ozadje{
+    max-width: 100%;
+    max-height: 100%;
+}
+html{
+    color: white;
+}
