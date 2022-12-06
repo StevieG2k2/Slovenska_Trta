@@ -12,6 +12,7 @@ namespace web.Models
         public int StTrt { get; set; }
         public int letoMeritve { get; set; }
 
+
         public ICollection<Pridelek> Pridelek { get; set; }
 
         public Trte Trte { get; set; }

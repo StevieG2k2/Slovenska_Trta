@@ -7,16 +7,21 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using web.Data;
 using web.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace web.Controllers
 {
+    [Authorize]
     public class TrteController : Controller
     {
         private readonly TrtaContext _context;
+        private readonly UserManager<ApplicationUser> _usermanager;
 
-        public TrteController(TrtaContext context)
+        public TrteController(TrtaContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _usermanager = userManager;
         }
 
         // GET: Trte
@@ -56,8 +61,12 @@ namespace web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("TrteId,Sorta")] Trte trte)
         {
+            var currentUser = await _usermanager.GetUserAsync(User);
             if (ModelState.IsValid)
             {
+                trte.DateCreated = DateTime.Now;
+                trte.DateEdited = DateTime.Now;
+                trte.Owner= currentUser;
                 _context.Add(trte);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
