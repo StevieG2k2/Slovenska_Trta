@@ -39,7 +39,10 @@ namespace web.Controllers
             }
 
             var trte = await _context.Trte
-                .FirstOrDefaultAsync(m => m.TrteId == id);
+            .Include(s => s.Vinogradi)
+                .ThenInclude(e => e.Pridelek)
+            .AsNoTracking()
+            .FirstOrDefaultAsync(m => m.TrteId == id);
             if (trte == null)
             {
                 return NotFound();
