@@ -16,6 +16,37 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Sorta)
         </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Vinogradi)
+        </dt>
+        <dd class="col-sm-10">
+            <table class="table">
+                <tr>
+                    <th>ID vinograda</th>
+                    <th>Število trt v vinogradu</th>
+                    <th>Površina vinograda</th>
+                    <th>Leto</th>
+                </tr>
+                @foreach (var item in Model.Vinogradi)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.VinogradiId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StTrt)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Povrsina)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.letoMeritve)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
     </dl>
 </div>
 <div>
