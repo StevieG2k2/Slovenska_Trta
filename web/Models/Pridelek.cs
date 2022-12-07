@@ -8,6 +8,7 @@ namespace web.Models
     {
         public int PridelekId { get; set; }
         public int TrteId { get; set; }
+        //mislm da bi mogli tukej dat VinogradiId
         public int VinogradId { get; set; }
         public int Kolicina { get; set; }
         public decimal KolNaHa { get; set; }
