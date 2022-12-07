@@ -40,13 +40,12 @@ namespace web.Controllers
             }
 
             var pridelek = await _context.Pridelek
-                .Include(p => p.Trte)
+                //.Include(p => p.Trte)
                 .FirstOrDefaultAsync(m => m.PridelekId == id);
             if (pridelek == null)
             {
                 return NotFound();
             }
-
             return View(pridelek);
         }
 

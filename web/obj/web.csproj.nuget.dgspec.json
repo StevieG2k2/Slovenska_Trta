@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jernej\\Desktop\\Slovenska_Trta\\web\\web.csproj": {}
+    "C:\\Users\\User\\Desktop\\Faks 2. letnik\\IS\\Slovenska_Trta\\web\\web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jernej\\Desktop\\Slovenska_Trta\\web\\web.csproj": {
+    "C:\\Users\\User\\Desktop\\Faks 2. letnik\\IS\\Slovenska_Trta\\web\\web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jernej\\Desktop\\Slovenska_Trta\\web\\web.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Faks 2. letnik\\IS\\Slovenska_Trta\\web\\web.csproj",
         "projectName": "web",
-        "projectPath": "C:\\Users\\Jernej\\Desktop\\Slovenska_Trta\\web\\web.csproj",
-        "packagesPath": "C:\\Users\\Jernej\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jernej\\Desktop\\Slovenska_Trta\\web\\obj\\",
+        "projectPath": "C:\\Users\\User\\Desktop\\Faks 2. letnik\\IS\\Slovenska_Trta\\web\\web.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Faks 2. letnik\\IS\\Slovenska_Trta\\web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Jernej\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"

@@ -47,50 +47,9 @@
                 }
             </table>
         </dd>
-        
-
-
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Pridelek)
         </dt>
-        <dd class="col-sm-10">
-            <table class="table">
-                <tr>
-                    <th>ID pridelka</th>
-                    <th>ID vinograda</th>
-                    <th>količina pridelka (t)</th>
-                    <th>količina pridelka (t/ha)</th>
-                    <th>količina pridelka (kg/trto)</th>
-                    <th>Leto</th>
-                </tr>
-                @foreach (var item in Model.Pridelek)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.PridelekId)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.VinogradId)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Kolicina)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.KolNaHa)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.KgNaTrto)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.letoMeritve)
-                        </td>
-                    </tr>
-                }
-            </table>
-        </dd>
-
-
-
     </dl>
 </div>
 <div>
