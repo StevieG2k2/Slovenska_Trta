@@ -25,10 +25,46 @@ namespace web.Controllers
         }
 
         // GET: Vinogradi
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder)
         {
-            var trtaContext = _context.Vinogradi.Include(v => v.Trte);
-            return View(await trtaContext.ToListAsync());
+            ViewData["TrteId"] = String.IsNullOrEmpty(sortOrder) ? "trteId_desc" : "";
+            ViewData["StSort"] = sortOrder == "stSort"  ? "stSort_desc" : "stSort";
+            ViewData["Povrsina"] = sortOrder == "povrsina" ? "povrsina_desc" : "povrsina";
+            ViewData["Leto"] = sortOrder == "leto" ? "leto_desc" : "leto";
+            
+            var vinogradi = from v in _context.Vinogradi
+                select v;
+            vinogradi = _context.Vinogradi.Include(v => v.Trte);
+            switch (sortOrder)
+            {
+                case "trteId_desc":
+                    vinogradi = vinogradi.OrderByDescending(v => v.TrteId);
+                    break;
+                case "stSort_desc":
+                    vinogradi = vinogradi.OrderByDescending(v => v.StTrt);
+                    break;
+                case "stSort":
+                    vinogradi = vinogradi.OrderBy(v => v.StTrt);
+                    break;
+                case "povrsina_desc":
+                    vinogradi = vinogradi.OrderByDescending(v => v.Povrsina);
+                    break;
+                case "povrsina":
+                    vinogradi = vinogradi.OrderBy(v => v.Povrsina);
+                    break;
+                case "leto_desc":
+                    vinogradi = vinogradi.OrderByDescending(v => v.letoMeritve);
+                    break;
+                case "leto":
+                    vinogradi = vinogradi.OrderBy(v => v.letoMeritve);
+                    break;
+                default:
+                    vinogradi = vinogradi.OrderBy(v => v.TrteId);
+                    break;
+            }
+            //var trtaContext = _context.Vinogradi.Include(v => v.Trte);
+            
+            return View(await vinogradi.AsNoTracking().ToListAsync());
         }
 
         // GET: Vinogradi/Details/5

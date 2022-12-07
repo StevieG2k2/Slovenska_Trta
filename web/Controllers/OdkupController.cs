@@ -26,9 +26,44 @@ namespace web.Controllers
         }
 
         // GET: Odkup
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder)
         {
-              return View(await _context.Odkup.ToListAsync());
+            ViewData["PridelekId"] = String.IsNullOrEmpty(sortOrder) ? "pridelekId_desc" : "";
+            ViewData["Kolicina"] = sortOrder == "kolicina"  ? "kolicina_desc" : "kolicina";
+            ViewData["CenaNaKg"] = sortOrder == "cena" ? "cena_desc" : "cena";
+            ViewData["Leto"] = sortOrder == "leto" ? "leto_desc" : "leto";
+            
+            var odkup = from v in _context.Odkup
+                select v;
+                
+            switch (sortOrder)
+            {
+                case "pridelekId_desc":
+                    odkup = odkup.OrderByDescending(v => v.PridelekId);
+                    break;
+                case "kolicina_desc":
+                    odkup = odkup.OrderByDescending(v => v.Kolicina);
+                    break;
+                case "kolicina":
+                    odkup = odkup.OrderBy(v => v.Kolicina);
+                    break;
+                case "cena_desc":
+                    odkup = odkup.OrderByDescending(v => v.CenaNaKg);
+                    break;
+                case "cena":
+                    odkup = odkup.OrderBy(v => v.CenaNaKg);
+                    break;
+                case "leto_desc":
+                    odkup = odkup.OrderByDescending(v => v.letoMeritve);
+                    break;
+                case "leto":
+                    odkup = odkup.OrderBy(v => v.letoMeritve);
+                    break;
+                default:
+                    odkup = odkup.OrderBy(v => v.PridelekId);
+                    break;
+            }
+            return View(await odkup.AsNoTracking().ToListAsync());
         }
 
         // GET: Odkup/Details/5

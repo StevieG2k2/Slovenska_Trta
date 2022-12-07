@@ -7,22 +7,22 @@
 <h1>Vinogradi</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Ustvari novo</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Povrsina)
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["Povrsina"]">@Html.DisplayNameFor(model => model.Povrsina)</a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.StTrt)
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["StSort"]">@Html.DisplayNameFor(model => model.StTrt)</a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.letoMeritve)
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["Leto"]">@Html.DisplayNameFor(model => model.letoMeritve)</a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Trte)
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["TrteId"]">@Html.DisplayNameFor(model => model.TrteId)</a>
             </th>
             <th></th>
         </tr>
