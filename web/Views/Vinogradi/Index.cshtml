@@ -12,18 +12,15 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Povrsina)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StTrt)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.letoMeritve)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Trte)
-            </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.TrteId)</a>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Povrsina)
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]">@Html.DisplayNameFor(model => model.StTrt)</a>
+                </th>
             <th></th>
         </tr>
     </thead>

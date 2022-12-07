@@ -25,10 +25,29 @@ namespace web.Controllers
         }
 
         // GET: Vinogradi
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder)
         {
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+            var vinogradi = from v in _context.Vinogradi
+                        select v;
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    vinogradi = vinogradi.OrderByDescending(v => v.TrteId);
+                    break;
+                case "Date":
+                    vinogradi = vinogradi.OrderBy(v => v.Povrsina);
+                    break;
+                case "date_desc":
+                    vinogradi = vinogradi.OrderByDescending(v => v.StTrt);
+                    break;
+                default:
+                    vinogradi = vinogradi.OrderBy(v => v.letoMeritve);
+                    break;
+            }
             var trtaContext = _context.Vinogradi.Include(v => v.Trte);
-            return View(await trtaContext.ToListAsync());
+            return View(await vinogradi.AsNoTracking().ToListAsync());
         }
 
         // GET: Vinogradi/Details/5
