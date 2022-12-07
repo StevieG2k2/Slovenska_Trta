@@ -12,8 +12,8 @@ using web.Data;
 namespace web.Migrations
 {
     [DbContext(typeof(TrtaContext))]
-    [Migration("20221206152805_Start")]
-    partial class Start
+    [Migration("20221207165751_Prvi")]
+    partial class Prvi
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -25,10 +25,63 @@ namespace web.Controllers
         }
 
         // GET: Pridelek
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder)
         {
-            var trtaContext = _context.Pridelek.Include(p => p.Trte);
-            return View(await trtaContext.ToListAsync());
+            ViewData["VinogradId"] = sortOrder == "vinogradId"  ? "vinogradId_desc" : "vinogradId";
+            ViewData["Kolicina"] = sortOrder == "kolicina"  ? "kolicina_desc" : "kolicina";
+            ViewData["KolNaHa"] = sortOrder == "hektar" ? "hektar_desc" : "hektar";
+            ViewData["KgNaTrto"] = sortOrder == "teza" ? "teza_desc" : "teza";
+            ViewData["Leto"] = sortOrder == "leto" ? "leto_desc" : "leto";
+            ViewData["TrteId"] = String.IsNullOrEmpty(sortOrder) ? "trteId_desc" : "";
+            
+            var pridelek = from v in _context.Pridelek
+                select v;
+
+            pridelek = _context.Pridelek
+                .Include(p => p.Trte)
+                .Include(p => p.Vinogradi);
+
+            switch (sortOrder)
+            {
+                case "vinogradId_desc":
+                    pridelek = pridelek.OrderByDescending(v => v.VinogradId);
+                    break;
+                case "vinogradId":
+                    pridelek = pridelek.OrderBy(v => v.VinogradId);
+                    break;
+                case "kolicina_desc":
+                    pridelek = pridelek.OrderByDescending(v => v.Kolicina);
+                    break;
+                case "kolicina":
+                    pridelek = pridelek.OrderBy(v => v.Kolicina);
+                    break;
+                case "hektar_desc":
+                    pridelek = pridelek.OrderByDescending(v => v.KolNaHa);
+                    break;
+                case "hektar":
+                    pridelek = pridelek.OrderBy(v => v.KolNaHa);
+                    break;
+                case "teza_desc":
+                    pridelek = pridelek.OrderByDescending(v => v.KgNaTrto);
+                    break;
+                case "teza":
+                    pridelek = pridelek.OrderBy(v => v.KgNaTrto);
+                    break;
+                case "leto_desc":
+                    pridelek = pridelek.OrderByDescending(v => v.letoMeritve);
+                    break;
+                case "leto":
+                    pridelek = pridelek.OrderBy(v => v.letoMeritve);
+                    break;
+                case "trteId_desc":
+                    pridelek = pridelek.OrderByDescending(v => v.TrteId);
+                    break;
+                default:
+                    pridelek = pridelek.OrderBy(v => v.TrteId);
+                    break;
+            }
+            
+            return View(await pridelek.AsNoTracking().ToListAsync());
         }
 
         // GET: Pridelek/Details/5
