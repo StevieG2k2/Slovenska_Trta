@@ -26,16 +26,36 @@ namespace web.Controllers
         }
 
         // GET: Odkup
-        public async Task<IActionResult> Index(string sortOrder)
+        public async Task<IActionResult> Index(string sortOrder, string searchString, string currentFilter, int? pageNumber)
         {
+            ViewData["CurrentSort"] = sortOrder;
             ViewData["PridelekId"] = String.IsNullOrEmpty(sortOrder) ? "pridelekId_desc" : "";
             ViewData["Kolicina"] = sortOrder == "kolicina"  ? "kolicina_desc" : "kolicina";
             ViewData["CenaNaKg"] = sortOrder == "cena" ? "cena_desc" : "cena";
             ViewData["Leto"] = sortOrder == "leto" ? "leto_desc" : "leto";
+
+            if (searchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewData["CurrentFilter"] = searchString;
             
             var odkup = from v in _context.Odkup
                 select v;
-                
+            
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                odkup = odkup.Where(s => s.PridelekId.ToString().Contains(searchString)
+                                    || s.Kolicina.ToString().Contains(searchString)
+                                    || s.CenaNaKg.ToString().Contains(searchString)
+                                    || s.letoMeritve.ToString().Contains(searchString));
+            }
+            
             switch (sortOrder)
             {
                 case "pridelekId_desc":
@@ -63,7 +83,8 @@ namespace web.Controllers
                     odkup = odkup.OrderBy(v => v.PridelekId);
                     break;
             }
-            return View(await odkup.AsNoTracking().ToListAsync());
+            int pageSize = 5;
+            return View(await PaginatedList<Odkup>.CreateAsync(odkup.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 
         // GET: Odkup/Details/5
