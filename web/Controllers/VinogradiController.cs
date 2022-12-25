@@ -25,16 +25,35 @@ namespace web.Controllers
         }
 
         // GET: Vinogradi
-        public async Task<IActionResult> Index(string sortOrder)
+        public async Task<IActionResult> Index(string sortOrder, string searchString, string currentFilter, int? pageNumber)
         {
+            ViewData["CurrentSort"] = sortOrder;
             ViewData["TrteId"] = String.IsNullOrEmpty(sortOrder) ? "trteId_desc" : "";
             ViewData["StSort"] = sortOrder == "stSort"  ? "stSort_desc" : "stSort";
             ViewData["Povrsina"] = sortOrder == "povrsina" ? "povrsina_desc" : "povrsina";
             ViewData["Leto"] = sortOrder == "leto" ? "leto_desc" : "leto";
-            
+
+            if (searchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewData["CurrentFilter"] = searchString;
+
             var vinogradi = from v in _context.Vinogradi
                 select v;
             vinogradi = _context.Vinogradi.Include(v => v.Trte);
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                vinogradi = vinogradi.Where(s => s.VinogradiId.ToString().Contains(searchString)
+                               || s.letoMeritve.ToString().Contains(searchString)
+                               || s.StTrt.ToString().Contains(searchString)
+                               || s.Povrsina.ToString().Contains(searchString));
+            }
             switch (sortOrder)
             {
                 case "trteId_desc":
@@ -63,8 +82,8 @@ namespace web.Controllers
                     break;
             }
             //var trtaContext = _context.Vinogradi.Include(v => v.Trte);
-            
-            return View(await vinogradi.AsNoTracking().ToListAsync());
+            int pageSize = 5;
+            return View(await PaginatedList<Vinogradi>.CreateAsync(vinogradi.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 
         // GET: Vinogradi/Details/5
