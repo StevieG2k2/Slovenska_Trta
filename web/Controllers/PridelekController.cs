@@ -25,8 +25,9 @@ namespace web.Controllers
         }
 
         // GET: Pridelek
-        public async Task<IActionResult> Index(string sortOrder)
-        {
+        public async Task<IActionResult> Index(string sortOrder, string searchString, string currentFilter, int? pageNumber)
+        {   
+            ViewData["CurrentSort"] = sortOrder;
             ViewData["VinogradId"] = sortOrder == "vinogradId"  ? "vinogradId_desc" : "vinogradId";
             ViewData["Kolicina"] = sortOrder == "kolicina"  ? "kolicina_desc" : "kolicina";
             ViewData["KolNaHa"] = sortOrder == "hektar" ? "hektar_desc" : "hektar";
@@ -34,12 +35,33 @@ namespace web.Controllers
             ViewData["Leto"] = sortOrder == "leto" ? "leto_desc" : "leto";
             ViewData["TrteId"] = String.IsNullOrEmpty(sortOrder) ? "trteId_desc" : "";
             
+            if (searchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewData["CurrentFilter"] = searchString;
+
             var pridelek = from v in _context.Pridelek
                 select v;
 
             pridelek = _context.Pridelek
                 .Include(p => p.Trte)
                 .Include(p => p.Vinogradi);
+            if (!String.IsNullOrEmpty(searchString))
+
+            {
+                pridelek = pridelek.Where(s => s.VinogradId.ToString().Contains(searchString)
+                               || s.letoMeritve.ToString().Contains(searchString)
+                               || s.Kolicina.ToString().Contains(searchString)
+                               || s.KolNaHa.ToString().Contains(searchString)
+                               || s.TrteId.ToString().Contains(searchString)
+                               || s.KgNaTrto.ToString().Contains(searchString));
+            }
 
             switch (sortOrder)
             {
@@ -81,7 +103,8 @@ namespace web.Controllers
                     break;
             }
             
-            return View(await pridelek.AsNoTracking().ToListAsync());
+            int pageSize = 5;
+            return View(await PaginatedList<Pridelek>.CreateAsync(pridelek.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 
         // GET: Pridelek/Details/5
