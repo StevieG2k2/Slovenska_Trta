@@ -11,7 +11,7 @@ var connectionString = builder.Configuration.GetConnectionString("TrtaContext");
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<TrtaContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("TrtaContext")));
+builder.Services.AddDbContext<TrtaContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("AzureContext")));
 
 builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
     .AddRoles<IdentityRole>()
