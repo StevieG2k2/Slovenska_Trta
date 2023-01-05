@@ -17,7 +17,8 @@ Poleg tega lahko iščemo po poljubnih atributih iz tabele, urejamo po posamezne
 
 ### Mobilna aplikacija
 Ponuja branje in vpisovanje podatkov preko mobilne aplikacije.
-![Screenshot_2023-01-05-17-52-10-663_com example slovenskatrtaapp](https://user-images.githubusercontent.com/41000453/210836288-71cc543d-ff4d-4f67-9e03-37b6209ab96a.jpg)
+![aplikacija1](https://user-images.githubusercontent.com/41000453/210870995-26638ac9-9df4-45f7-9dc8-856642cf5a30.PNG)
+
 Deluje preko Swagger API-ja
 ![Screenshot_2023-01-05-17-52-21-447_com example slovenskatrtaapp](https://user-images.githubusercontent.com/41000453/210836332-a5430f93-e31b-479f-994e-5ad6ac5ee37e.jpg)
 
