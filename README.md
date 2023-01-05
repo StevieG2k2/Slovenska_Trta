@@ -3,6 +3,7 @@ Avtorja: Luka Grahor in Jernej Petrovčič
 ## Delovanje
 Slovenska Trta je spletna in mobilna aplikacija za vnos in prikaz podatkov o vinogradih v Sloveniji.
 Podatki so vzeti iz spletne strani Odprti Podatki Slovenije: https://podatki.gov.si/dataset/surs1502406s.
+
 Podatkovna baza in spletna aplikacija se nahajata na strežniku Azure, tako da je aplikacija dostopna preko spleta.
 povezava do spletne aplikacije: https://slovenskatrta-is.azurewebsites.net/swagger
 ### Spletna aplikacija
@@ -19,9 +20,10 @@ Poleg tega lahko iščemo po poljubnih atributih iz tabele, urejamo po posamezne
 Ponuja branje in vpisovanje podatkov preko mobilne aplikacije.
 
 ![aplikacija1](https://user-images.githubusercontent.com/41000453/210870995-26638ac9-9df4-45f7-9dc8-856642cf5a30.PNG)
+
 Deluje preko Swagger API-ja
 
-![Screenshot_2023-01-05-17-52-21-447_com example slovenskatrtaapp](https://user-images.githubusercontent.com/41000453/210836332-a5430f93-e31b-479f-994e-5ad6ac5ee37e.jpg)
+![aplikacija2](https://user-images.githubusercontent.com/41000453/210871475-74fe6d84-1db1-4742-bf86-d8cc661a609a.PNG)
 
 ## Izdelava
 ### Luka Grahor:
