@@ -35,3 +35,4 @@ Deluje preko Swagger API-ja
 - Ustvaril model za našo končno podatkovno bazo
 - Ustvaril in napolnil podatkovno bazo
 - Postavil temelje za spletno aplikacijo
+  - Generiral in uredil kontrolerje
