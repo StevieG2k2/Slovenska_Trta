@@ -31,6 +31,7 @@ Deluje preko Swagger API-ja
 - Ustvaril mobilno aplikacijo
 
 ### Jernej Petrovčič:
+- Poiskal temo in podatke za izdelek
 - Ustvaril model za našo končno podatkovno bazo
 - Ustvaril in napolnil podatkovno bazo
 - Postavil temelje za spletno aplikacijo
