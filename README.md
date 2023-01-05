@@ -42,4 +42,4 @@ Deluje preko Swagger API-ja
   - Generiral in uredil kontrolerje
 
 ## Slika podatkovnega modela
-![image](https://user-images.githubusercontent.com/41000453/210870507-d7242e02-a6f2-4dbc-9bd2-a2e606665045.png)
+![SLovenskaTrta](https://user-images.githubusercontent.com/41000453/210872397-3875f019-f453-4af4-bdeb-85a0f114b3eb.PNG)
