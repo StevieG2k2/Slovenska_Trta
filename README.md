@@ -36,3 +36,6 @@ Deluje preko Swagger API-ja
 - Ustvaril in napolnil podatkovno bazo
 - Postavil temelje za spletno aplikacijo
   - Generiral in uredil kontrolerje
+
+## Slika podatkovnega modela
+![image](https://user-images.githubusercontent.com/41000453/210870507-d7242e02-a6f2-4dbc-9bd2-a2e606665045.png)
