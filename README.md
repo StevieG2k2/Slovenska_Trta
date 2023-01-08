@@ -1,6 +1,6 @@
 # Slovenska Trta
-Avtorja: #Luka Grahor, vpisi stevilko
-         #Jernej Petrovčič, 63210245
+Avtorja: -Luka Grahor, vpisi stevilko
+         -Jernej Petrovčič, 63210245
 ## Delovanje
 Slovenska Trta je spletna in mobilna aplikacija za vnos in prikaz podatkov o vinogradih v Sloveniji.
 Podatki so vzeti iz spletne strani Odprti Podatki Slovenije: https://podatki.gov.si/dataset/surs1502406s.
