@@ -1,5 +1,5 @@
 # Slovenska Trta
-##Avtorja: 
+## Avtorja: 
 -Luka Grahor, vpisi stevilko
 -Jernej Petrovčič, 63210245
 ## Delovanje
