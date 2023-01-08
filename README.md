@@ -1,6 +1,6 @@
 # Slovenska Trta
 ## Avtorja: 
-- Luka Grahor, vpisi stevilko
+- Luka Grahor, 63210090
 - Jernej Petrovčič, 63210245
 ## Delovanje
 Slovenska Trta je spletna in mobilna aplikacija za vnos in prikaz podatkov o vinogradih v Sloveniji.
